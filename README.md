@@ -24,7 +24,7 @@
 
 ## Description
 
-Application that calculates total amount of water stored given surface profile created with [Nest](https://github.com/nestjs/nest)
+Application that calculates total amount of water stored given surface profile created with [Nest](https://github.com/nestjs/nest).
 
 ## Requirements
 
@@ -84,9 +84,11 @@ $ npm run test
 ```
 
 ## Using the app
+If you want to confirm if app is running, enter http://localhost:3000 in browser of your choice. IF app is running, you should see plain "Hello World" message.
+
 Those steps assume you have postman or other such API calling capable app. Instruction provided here assume that you are familiar with postman.
 
-In address bar put
+In address bar put:
 ```bash
 http://localhost:3000/surface-profiles
 ```
@@ -108,5 +110,6 @@ Now in body tab you can enter your data as long it fits formatting presented bel
 }
 ```
 where in [] you should put at least three not negative and integer numbers, ie [2, 1, 2]
+
 
 Nest is [MIT licensed](LICENSE).
