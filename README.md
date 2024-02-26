@@ -24,50 +24,89 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Application that calculates total amount of water stored given surface profile created with [Nest](https://github.com/nestjs/nest)
 
-## Installation
+## Requirements
 
+- Node.js 20.11.1
+- npm 10.4.0
+- Postman or other app that is capable of creating http request to localhost
+
+## As local app
+
+### Install
+
+Run following command from root of project:
 ```bash
 $ npm install
 ```
 
-## Running the app
+### Running
 
+Run one of following commands from root of project:
 ```bash
 # development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
 
 # production mode
 $ npm run start:prod
 ```
 
+## As docker container
+
+These steps assume you have Docker installed.
+
+### Install
+
+Run following command from root of project:
+```bash
+$ docker build --tag rest-api .
+```
+
+### Running
+
+Run following command from root of project:
+```bash
+$ docker compose up
+```
+
 ## Test
 
+App has test coverage of surface-profile module in following responsibilities:
+- controllers
+- service
+- validation pipe
+
+Run following command from root of project:
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+## Using the app
+Those steps assume you have postman or other such API calling capable app. Instruction provided here assume that you are familiar with postman.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+In address bar put
+```bash
+http://localhost:3000/surface-profiles
+```
+and change request type to GET.
 
-## Stay in touch
+In headers tab add key:
+```bash
+Content-Type
+```
+and in value add:
+```bash
+application/json
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
+Now in body tab you can enter your data as long it fits formatting presented below:
+```bash
+{
+    "surfaceProfile": []
+}
+```
+where in [] you should put at least three not negative and integer numbers, ie [2, 1, 2]
 
 Nest is [MIT licensed](LICENSE).
